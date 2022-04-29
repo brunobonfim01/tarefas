@@ -1,0 +1,18 @@
+<table class="tabela">
+  <thead class="tabela__cabecalho">
+    <th class="tabela__cabecalho__conteudo">Tarefas Concluidas</th>
+  </thead>
+  <tbody class="tabela__linha1" >
+    <tr class="tabela__linha" *ngFor="let concluido of listar_task" >
+      <td class="tabela__conteudo__text">{{ concluido.title }}</td>
+      <td class="tabela__conteudo__descripition">{{ concluido.description }}</td>
+      <td class="tabela__conteudo__data"></td>
+      <i class="material-icons" (click)="desmarcaTarefa(concluido)">check</i>
+      <i class="material-icons"(click)="deletaTarefa(concluido)">clear</i>
+      <i class="material-icons">border_color</i>
+    </tr>
+  </tbody>
+</table>
+<ng-template #listaVazia>
+  <p>Nenhuma tarefa cadastrada</p>
+</ng-template>
